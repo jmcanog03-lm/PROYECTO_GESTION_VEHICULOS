@@ -31,4 +31,5 @@ En un contexto donde la fiabilidad es clave (por ejemplo, garantizar que la merc
 ![Diagrama de Flujo Git Flow](img/html.png)
 
 *Estas extensiones para HTML y CSS las recomendamos porque nos va a facilitar mucho a la hora de declarar las variables como div se abren y se cierran solas.*
+
 *Bootstrap la recomendamos porque nos permite declarar toda la estructura HTML y ademas permite hacer cosas como modales e importar iconos para nuestra web.*
