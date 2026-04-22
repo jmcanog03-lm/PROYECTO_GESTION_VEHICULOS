@@ -46,7 +46,7 @@ En un contexto donde la fiabilidad es clave (por ejemplo, garantizar que la merc
 
 ![Diagrama de Flujo Git Flow](img/java.png)
 
-*Esto es lo necesario para empezar en Java y funciona junto al jdk de Java y contiene las siguientes cosas: *
+*Esto es lo necesario para empezar en Java y funciona junto al jdk de Java y contiene las siguientes cosas:*
 
  **🔹 1. Language Support for Java™ by Red Hat**
 
@@ -63,8 +63,8 @@ En un contexto donde la fiabilidad es clave (por ejemplo, garantizar que la merc
 
 **🔹 3. Test Runner for Java**
 
--* *Ejecutar tests (JUnit)*
--* *Ver resultados de pruebas*
+- *Ejecutar tests (JUnit)*
+- *Ver resultados de pruebas*
 - *Integración con testing*
 
 **🔹 4. Maven for Java**
@@ -78,3 +78,4 @@ En un contexto donde la fiabilidad es clave (por ejemplo, garantizar que la merc
 - *Organiza proyectos Java*
 - *Vista estructurada del proyecto*
 - *Gestión de múltiples proyectos*
+
