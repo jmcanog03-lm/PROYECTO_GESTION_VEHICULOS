@@ -11,11 +11,7 @@ Proyecto de una aplicacion que sirve para gestionar vehículos junto a su conduc
 ![Diagrama de Flujo Git Flow](img/diagraama.png)
 
 
-## Porque hemos usado Git Flow
-
-El uso de *Git Flow* en este proyecto se debe a la necesidad de mantener un desarrollo organizado, seguro y escalable, especialmente en un sistema de logística donde se gestionan elementos críticos como rutas, vehículos y condiciones de la mercancía (por ejemplo, temperatura y sensores).
-
-aporta las siguientes ventajas:
+## Ventajas de usar Git Flow
 
 - **Separación clara de entornos**: la rama `main` contiene siempre código estable en producción, mientras que `develop` centraliza el desarrollo activo.
 - **Desarrollo paralelo**: mediante ramas `feature`, varios miembros del equipo pueden trabajar simultáneamente sin interferencias.
@@ -25,3 +21,14 @@ aporta las siguientes ventajas:
 
 En un contexto donde la fiabilidad es clave (por ejemplo, garantizar que la mercancía se transporta en condiciones óptimas), este modelo ayuda a reducir errores, mejorar la trazabilidad de cambios y asegurar la estabilidad del sistema en todo momento.
 
+
+## Extensiones que recomendamos usar en VS CODE
+
+- *HTML*
+
+![Diagrama de Flujo Git Flow](img/bootstrap.png)
+
+![Diagrama de Flujo Git Flow](img/html.png)
+
+*Estas extensiones para HTML y CSS las recomendamos porque nos va a facilitar mucho a la hora de declarar las variables como div se abren y se cierran solas.*
+*Bootstrap la recomendamos porque nos permite declarar toda la estructura HTML y ademas permite hacer cosas como modales e importar iconos para nuestra web.*
