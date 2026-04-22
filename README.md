@@ -15,7 +15,7 @@ Proyecto de una aplicacion que sirve para gestionar vehículos junto a su conduc
 
 El uso de *Git Flow* en este proyecto se debe a la necesidad de mantener un desarrollo organizado, seguro y escalable, especialmente en un sistema de logística donde se gestionan elementos críticos como rutas, vehículos y condiciones de la mercancía (por ejemplo, temperatura y sensores).
 
-Git Flow permite estructurar el trabajo mediante diferentes ramas con propósitos específicos, lo que aporta las siguientes ventajas:
+aporta las siguientes ventajas:
 
 - **Separación clara de entornos**: la rama `main` contiene siempre código estable en producción, mientras que `develop` centraliza el desarrollo activo.
 - **Desarrollo paralelo**: mediante ramas `feature`, varios miembros del equipo pueden trabajar simultáneamente sin interferencias.
