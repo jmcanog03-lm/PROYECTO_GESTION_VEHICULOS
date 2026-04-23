@@ -79,3 +79,30 @@ En un contexto donde la fiabilidad es clave (por ejemplo, garantizar que la merc
 - *Vista estructurada del proyecto*
 - *Gestión de múltiples proyectos*
 
+
+## Diagrama de Secuencia
+
+![Diagrama de Flujo Git Flow](img/0.png)
+
+**1. Trazabilidad de la Responsabilidad (Accountability)**
+
+En un entorno de mercancías críticas, la **responsabilidad verificable** es el activo intangible más valioso.
+
+* **Justificación:** La inclusión obligatoria del caso de uso `Iniciar Sesión` en las acciones del **Conductor** y el **Administrador** garantiza que cada interacción quede vinculada a una identidad única.
+
+* **Valor:** Esto proporciona seguridad jurídica y transparencia, permitiendo reconstruir la cadena de custodia ante cualquier incidencia o auditoría externa.
+
+ **2. Conciencia Situacional y Resiliencia**
+
+El sistema transita de una logística reactiva a una **logística predictiva** mediante la integración del actor **Sensores**.
+* **Justificación:** Los casos de uso `Enviar Datos GPS` y `Detectar Fallos` operan de forma autónoma a la intervención humana.
+
+* **Valor:** Este flujo constante genera el intangible de **paz mental operativa**. La plataforma permite anticiparse a la pérdida de cadena de frío o desviaciones de ruta, protegiendo la reputación de la empresa y la integridad del producto antes de que el daño sea irreversible.
+
+**3. Armonización de la Inteligencia Operativa**
+
+El diseño justifica la convergencia de tres perspectivas distintas en una sola fuente de verdad:
+
+1. **El Administrador:** Supervisión estratégica y gestión de talento.
+2. **El Conductor:** Ejecución táctica y navegación.
+3. **El Sistema de Sensores:** Verdad técnica objetiva (Temperatura, GPS, Estado).
