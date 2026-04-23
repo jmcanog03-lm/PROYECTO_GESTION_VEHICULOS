@@ -80,7 +80,7 @@ En un contexto donde la fiabilidad es clave (por ejemplo, garantizar que la merc
 - *Gestión de múltiples proyectos*
 
 
-## Diagrama de Secuencia
+## Diagrama de Casos de Uso
 
 ![Diagrama de Flujo Git Flow](img/diagramasecuencia.drawio.png)
 
@@ -143,3 +143,41 @@ Se utilizan tipos enumerados para `VehiculoEstado`, `MercanciaEstado`, `RutaEsta
 * **Justificación:** El uso de `Enums` restringe los valores posibles a estados lógicos de negocio, evitando que el sistema entre en estados inconsistentes o errores de entrada de datos.
 
 * **Valor Intangible:** **Consistencia de la Información.** Garantiza que los informes de gestión sean precisos, facilitando la toma de decisiones basada en datos reales y normalizados.
+
+## Diagrama de Secuencias
+
+![Diagrama de Flujo Git Flow](img/secuencia.png)
+
+
+*El diagrama de secuencia presentado modela la interacción dinámica y temporal ante un evento crítico. Este diseño justifica la capacidad de respuesta inmediata del sistema frente a anomalías en la mercancía.*
+
+**1. Automatización de la Respuesta Crítica**
+
+El flujo comienza con una lectura automática del **Sensor de Temperatura** hacia la **Plataforma de Gestión**. 
+* **Justificación:** Se demuestra que la detección de fallos no requiere intervención humana inicial, eliminando tiempos muertos. 
+
+* **Valor Intangible:** **Seguridad Proactiva.** El sistema actúa como un vigilante incansable que garantiza la integridad de la carga 24/7. 
+
+**2. Lógica de Decisión Centralizada**
+
+La plataforma ejecuta un proceso de "Lógica de Alerta" comparando los datos recibidos con los límites de la ruta. 
+
+* **Justificación:** Este paso justifica la inteligencia del software para discernir entre variaciones normales y emergencias reales. 
+
+* **Valor Intangible:** **Precisión Operativa.** Reduce el ruido de falsas alarmas, permitiendo que el personal se enfoque solo en riesgos confirmados. 
+
+**3. Sincronización Multi-Actor en Tiempo Real**
+
+El diagrama muestra una difusión paralela (2a y 2b) hacia el **Conductor** y el **Administrador de Flota**. 
+
+* **Justificación:** Garantiza que todos los responsables tengan la misma información de forma simultánea (Single Source of Truth). 
+
+* **Valor Intangible:** **Conciencia Situacional Colectiva.** Mejora la coordinación del equipo, permitiendo que el conductor actúe en campo mientras el administrador gestiona la logística de respaldo. 
+
+**4. Trazabilidad del Cierre de Incidencias**
+
+El flujo concluye con la "Confirmación de Recepción" y la actualización del estado a "En Atención".
+
+* **Justificación:** Este cierre de ciclo es vital para asegurar que ninguna alerta quede ignorada o en el olvido. 
+
+* **Valor Intangible:** **Garantía de Responsabilidad (Accountability).** Proporciona una auditoría clara sobre quién atendió la emergencia y en qué momento exacto se tomó el control.
