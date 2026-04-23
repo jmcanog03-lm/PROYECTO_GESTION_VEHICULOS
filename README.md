@@ -82,7 +82,7 @@ En un contexto donde la fiabilidad es clave (por ejemplo, garantizar que la merc
 
 ## Diagrama de Secuencia
 
-![Diagrama de Flujo Git Flow](img/0.png)
+![Diagrama de Flujo Git Flow](img/diagramasecuencia.drawio.png)
 
 **1. Trazabilidad de la Responsabilidad (Accountability)**
 
@@ -106,3 +106,40 @@ El diseño justifica la convergencia de tres perspectivas distintas en una sola 
 1. **El Administrador:** Supervisión estratégica y gestión de talento.
 2. **El Conductor:** Ejecución táctica y navegación.
 3. **El Sistema de Sensores:** Verdad técnica objetiva (Temperatura, GPS, Estado).
+
+
+## Diagrama de Clases
+
+![Diagrama de Flujo Git Flow](img/clases.png)
+
+**1. Especialización mediante Herencia (Patrón de Monitoreo)**
+
+El diagrama emplea una clase abstracta `Sensor` de la cual derivan sensores específicos: `SensorTemperatura`, `SensorVelocidad`, `SensorUbicacion` y `SensorCombustible`.
+
+* **Justificación:** Esta estructura permite tratar a todos los sensores de forma genérica para funciones comunes, pero otorga comportamientos únicos (como `notificarExcesoTemperatura`) a los sensores especializados.
+
+* **Valor Intangible:** **Escalabilidad y Adaptabilidad.** El sistema es capaz de evolucionar ante nuevas normativas de transporte (por ejemplo, añadir sensores de humedad) sin necesidad de reescribir el núcleo del software.
+
+**2. Garantía de la Cadena de Custodia y Calidad**
+
+La clase `Mercancia` posee atributos críticos de control, como `umbralTempMin` y `umbralTempMax`.
+
+* **Justificación:** Estos atributos alimentan la lógica del `SensorTemperatura`. Cuando el método `verificarUmbral()` detecta una desviación, se dispara automáticamente la creación de una entidad `Alerta`.
+
+* **Valor Intangible:** **Mitigación Automática de Daños.** La plataforma garantiza la integridad del producto de forma proactiva, eliminando la dependencia del factor humano para detectar fallos en la cadena de frío o de seguridad.
+
+**3. Integridad y Cohesión de Activos**
+
+El modelo vincula las clases `Vehiculo`, `Conductor` y `Ruta` con multiplicidades estrictas.
+
+* **Justificación:** La relación de **Agregación** entre `Vehiculo` y `Mercancia`, junto con la vinculación al `Conductor`, asegura que el sistema siempre conozca el estado de la carga y el responsable legal de la misma en tiempo real.
+
+* **Valor Intangible:** **Trazabilidad Total (Accountability).** En logística crítica, la capacidad de reconstruir los eventos de una ruta es un activo legal y operativo que genera confianza ante clientes y entes reguladores.
+
+**4. Robustez de Datos mediante Tipos Enumerados (Enums)**
+
+Se utilizan tipos enumerados para `VehiculoEstado`, `MercanciaEstado`, `RutaEstado` y `AlertaGravedad`.
+
+* **Justificación:** El uso de `Enums` restringe los valores posibles a estados lógicos de negocio, evitando que el sistema entre en estados inconsistentes o errores de entrada de datos.
+
+* **Valor Intangible:** **Consistencia de la Información.** Garantiza que los informes de gestión sean precisos, facilitando la toma de decisiones basada en datos reales y normalizados.
