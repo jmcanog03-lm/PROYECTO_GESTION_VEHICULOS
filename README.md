@@ -82,6 +82,8 @@ En un contexto donde la fiabilidad es clave (por ejemplo, garantizar que la merc
 
 ## Diagrama de Casos de Uso
 
+*El presente diagrama de Casos de Uso no solo define los requerimientos funcionales, sino que establece los pilares de valor intangible que garantizan la viabilidad operativa y la seguridad en el transporte de mercancías de alta prioridad.*
+
 ![Diagrama de Flujo Git Flow](img/diagramasecuencia.drawio.png)
 
 **1. Trazabilidad de la Responsabilidad (Accountability)**
@@ -111,6 +113,8 @@ El diseño justifica la convergencia de tres perspectivas distintas en una sola 
 ## Diagrama de Clases
 
 ![Diagrama de Flujo Git Flow](img/clases.png)
+
+*El modelo de clases diseñado constituye la base de datos y la lógica de negocio del sistema. Su arquitectura está orientada a la **gestión de riesgos** y al **cumplimiento normativo**, elementos vitales en el transporte de carga crítica.*
 
 **1. Especialización mediante Herencia (Patrón de Monitoreo)**
 
@@ -181,3 +185,18 @@ El flujo concluye con la "Confirmación de Recepción" y la actualización del e
 * **Justificación:** Este cierre de ciclo es vital para asegurar que ninguna alerta quede ignorada o en el olvido. 
 
 * **Valor Intangible:** **Garantía de Responsabilidad (Accountability).** Proporciona una auditoría clara sobre quién atendió la emergencia y en qué momento exacto se tomó el control.
+
+
+## Tabla de casos de Prueba
+
+![Diagrama de Flujo Git Flow](img/tabla.png)
+
+La inclusión de esta batería de pruebas responde a una necesidad crítica del proyecto: **no podemos dejar el éxito de la operativa logística en manos del azar.** En un sistema que integra sensores de temperatura y gestión de rutas en tiempo real, cualquier error de lógica podría suponer la pérdida de mercancía o retrasos inasumibles.
+
+Con el diseño de estos casos de prueba buscamos cumplir tres objetivos estratégicos:
+
+1.  **Garantizar la Robustez:** Aseguramos que el software se comporte de forma predecible no solo con datos correctos, sino también ante excepciones (como temperaturas fuera de rango o campos vacíos), evitando que el programa se detenga inesperadamente.
+
+2.  **Evitar el "Efecto Dominó":** Al verificar los métodos `validarRuta()` y `verificarCondicionesCarga()` de forma aislada, garantizamos que los cimientos del sistema son sólidos antes de integrar funcionalidades más complejas.
+
+3.  **Asegurar la Calidad del MVP:** Siguiendo nuestra metodología **Scrumban**, cada incremento de software debe ser totalmente fiable. Estos casos de prueba actúan como el "filtro de calidad" necesario para cumplir con el requisito de mayor valor del cliente: la entrega de mercancía en condiciones óptimas.
