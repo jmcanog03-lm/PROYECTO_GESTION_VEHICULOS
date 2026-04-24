@@ -191,6 +191,24 @@ El flujo concluye con la "Confirmación de Recepción" y la actualización del e
 
 ![Diagrama de Flujo Git Flow](img/tabla.png)
 
+La tabla de pruebas presentada no es solo un listado de acciones, sino una verificación de las **reglas de negocio críticas** del sistema logístico. Cada caso ha sido diseñado para blindar el software ante situaciones que comprometerían la seguridad, la legalidad o la rentabilidad de la empresa:
+
+1.  **Validación de Licencias (Caso 1):** Esta prueba garantiza el cumplimiento legal y la seguridad vial. El sistema actúa como un filtro preventivo para evitar que un error administrativo se convierta en una infracción grave o un riesgo de accidente.
+
+2.  **Control de Capacidad (Caso 2):** Es fundamental para la integridad mecánica de la flota. Evitar el exceso de peso previene el desgaste prematuro de los vehículos y asegura que el software respete los límites físicos del hardware (el camión).
+
+3.  **Monitoreo de Sensores (Caso 3):** Es el corazón del MVP para mercancía sensible. Esta prueba valida que la integración de hardware/software funciona correctamente, disparando alertas en tiempo real antes de que la carga se deteriore.
+
+4.  **Coherencia de Estados (Casos 4 y 5):** Estas pruebas protegen la **integridad de los datos**. Impedir que se finalice un viaje inexistente o que se asigne un vehículo que está en el taller evita errores en los informes de disponibilidad y asegura que la planificación de rutas se base en la realidad operativa.
+
+En resumen, estos casos de prueba aseguran que el sistema sea **robusto ante el error humano** y capaz de mantener la continuidad del negocio bajo condiciones de estrés o datos inconsistentes.
+
+
+## Metodo validarRuta() y verificarCondicionesCarga()
+
+![Diagrama de Flujo Git Flow](img/validarruta.png)
+![Diagrama de Flujo Git Flow](img/verificarcondicionescarga.png)
+
 La inclusión de esta batería de pruebas responde a una necesidad crítica del proyecto: **no podemos dejar el éxito de la operativa logística en manos del azar.** En un sistema que integra sensores de temperatura y gestión de rutas en tiempo real, cualquier error de lógica podría suponer la pérdida de mercancía o retrasos inasumibles.
 
 Con el diseño de estos casos de prueba buscamos cumplir tres objetivos estratégicos:
@@ -200,3 +218,35 @@ Con el diseño de estos casos de prueba buscamos cumplir tres objetivos estraté
 2.  **Evitar el "Efecto Dominó":** Al verificar los métodos `validarRuta()` y `verificarCondicionesCarga()` de forma aislada, garantizamos que los cimientos del sistema son sólidos antes de integrar funcionalidades más complejas.
 
 3.  **Asegurar la Calidad del MVP:** Siguiendo nuestra metodología **Scrumban**, cada incremento de software debe ser totalmente fiable. Estos casos de prueba actúan como el "filtro de calidad" necesario para cumplir con el requisito de mayor valor del cliente: la entrega de mercancía en condiciones óptimas.
+
+## Refactoriacion
+
+![Diagrama de Flujo Git Flow](img/refactorizacion.png)
+
+La refactorización no es una simple corrección de errores, sino una inversión en la **calidad y salud a largo plazo** del software. Tras la primera fase de desarrollo, se identificó que el código presentaba "deuda técnica" (código difícil de leer o mantener) que debía ser resuelta antes de escalar el proyecto.
+
+Los motivos principales que justifican este proceso son:
+
+1.  **Mejora de la Mantenibilidad:** Al dividir los "Métodos Súper-Hombre" (que hacían de todo) en métodos pequeños con una **única responsabilidad**, hemos logrado que el código sea mucho más fácil de actualizar. Si mañana cambia la normativa de impuestos, solo tenemos que tocar un método específico, no toda la lógica del sistema.
+
+2.  **Reducción de la Carga Cognitiva:** El cambio de nombres de variables genéricas (`v1`, `lista`) a nombres semánticos (`vehiculoAEliminar`, `registroFlota`) permite que cualquier desarrollador nuevo entienda qué hace el código de un solo vistazo, sin tener que "adivinar" el contenido de las variables.
+
+3.  **Prevención de Errores (Robustez):** Al eliminar la duplicación de código (DRY - *Don't Repeat Yourself*), reducimos drásticamente las posibilidades de introducir bugs. Si una validación está escrita en cinco sitios distintos, es fácil olvidar actualizar uno; si está centralizada en un solo método refactorizado, el sistema es mucho más seguro.
+
+4.  **Legibilidad con Cláusulas de Guarda:** El uso de "salidas rápidas" (`return` tempranos) limpia la estructura visual del código, eliminando el exceso de llaves `{}` y niveles de indentación que suelen ocultar errores de lógica.
+
+## Indice Javadoc
+
+![Diagrama de Flujo Git Flow](img/indicejavadoc.png)
+
+La creación de un índice de documentación técnica (Javadoc) no es un simple formalismo, sino una herramienta estratégica para garantizar la **continuidad del proyecto**. En un entorno de desarrollo profesional, el código se escribe una vez, pero se lee cientos de veces.
+
+La estructura elegida para nuestro Javadoc se justifica por los siguientes puntos:
+
+1.  **Estandarización de la Información:** Al organizar el contenido por paquetes (`model` y `service`), permitimos que cualquier desarrollador localice la lógica de datos o la lógica de negocio de forma instantánea, reduciendo los tiempos de aprendizaje (*onboarding*).
+
+2.  **Transparencia en la Jerarquía:** El índice de clases es fundamental para entender el sistema de herencia. De un vistazo, queda claro que `Vehiculo` es el contrato principal y cómo `Coche` o `Camion` extienden sus capacidades.
+
+3.  **Contrato de Métodos:** Documentar parámetros (`@param`), retornos (`@return`) y excepciones (`@throws`) actúa como un contrato legal entre programadores. Esto asegura que los métodos críticos, como `calcularImpuesto()` o `validarRuta()`, se utilicen correctamente sin necesidad de leer toda la implementación interna.
+
+4.  **Autogeneración y Actualización:** El uso de Javadoc permite que la documentación técnica evolucione al mismo ritmo que el código. Esto evita el problema común de tener manuales desactualizados que no coinciden con la versión real del software.
