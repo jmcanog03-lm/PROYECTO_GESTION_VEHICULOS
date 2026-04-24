@@ -237,16 +237,16 @@ Los motivos principales que justifican este proceso son:
 
 ## Indice Javadoc
 
-![Diagrama de Flujo Git Flow](img/indicejavadoc.png)
+![Diagrama de Flujo Git Flow](img/javadoc2.png)
 
-La creación de un índice de documentación técnica (Javadoc) no es un simple formalismo, sino una herramienta estratégica para garantizar la **continuidad del proyecto**. En un entorno de desarrollo profesional, el código se escribe una vez, pero se lee cientos de veces.
+![Diagrama de Flujo Git Flow](img/javadoc4.png)
 
-La estructura elegida para nuestro Javadoc se justifica por los siguientes puntos:
+La documentación técnica generada se centra en los pilares operativos del sistema de transporte, tal como se refleja en el diagrama de clases:
 
-1.  **Estandarización de la Información:** Al organizar el contenido por paquetes (`model` y `service`), permitimos que cualquier desarrollador localice la lógica de datos o la lógica de negocio de forma instantánea, reduciendo los tiempos de aprendizaje (*onboarding*).
+1.  **Jerarquía de Sensores:** Se justifica la documentación de la clase abstracta `Sensor` y sus especializaciones (`SensorTemperatura`, `SensorVelocidad`, etc.). Esto asegura que cualquier nuevo sensor que se añada en el futuro siga el contrato de `leerValor()` y `verificarUmbral()`.
 
-2.  **Transparencia en la Jerarquía:** El índice de clases es fundamental para entender el sistema de herencia. De un vistazo, queda claro que `Vehiculo` es el contrato principal y cómo `Coche` o `Camion` extienden sus capacidades.
+2.  **Integridad en la Gestión de Rutas:** Hemos priorizado la documentación de los métodos `validarRuta()` y `verificarCondicionesCarga()` en la clase `Ruta`. Estos métodos son el corazón de la seguridad del sistema, encargándose de cruzar los datos de la `Mercancia` con la capacidad del `Vehiculo`.
 
-3.  **Contrato de Métodos:** Documentar parámetros (`@param`), retornos (`@return`) y excepciones (`@throws`) actúa como un contrato legal entre programadores. Esto asegura que los métodos críticos, como `calcularImpuesto()` o `validarRuta()`, se utilicen correctamente sin necesidad de leer toda la implementación interna.
+3.  **Gestión de Alertas:** Se documenta el flujo de notificaciones (`Alerta`) que se dispara desde los sensores. Esto es vital para que los desarrolladores entiendan cómo se asocia una lectura crítica con una respuesta del sistema.
 
-4.  **Autogeneración y Actualización:** El uso de Javadoc permite que la documentación técnica evolucione al mismo ritmo que el código. Esto evita el problema común de tener manuales desactualizados que no coinciden con la versión real del software.
+4.  **Trazabilidad:** La documentación de las relaciones entre `Conductor`, `Vehiculo` y `Ruta` permite entender el ciclo de vida completo de un envío, desde la asignación de licencia hasta la finalización del viaje.
